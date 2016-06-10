@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="inCal">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+<title>inCal</title>
+<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<script src="lib/ionic/js/ionic.bundle.js"></script>
+<script src="cordova.js"></script>
+<script src="js/decimal.min.js"></script>
+<script src="js/ng-remtext.js"></script>
+<script src="js/app.js"></script>
+<script src="js/calc-controllers.js"></script>
+</head>
+
+<script id="templates/info.html" type="text/ng-template">
+	<ion-modal-view>
+    	<ion-header-bar class="bar-stable">
+        	<h1 class="title">inCal</h1>
+        	<button class="button button-icon icon ion-close blu" ng-click="vm.modal.hide()"></button>
+        </ion-header-bar>
+        <ion-content class="padding">
+        	<br/>
+        	<p>Simple 4 operations calculator with nearly infinite precision.</p>
+        	<br/><br/>
+        	<p>by Fabio Ferrero</p>
+        	<p><a href="http://fabioferrero.it">http://fabioferrero.it</a></p>
+        </ion-content>
+    </ion-modal-view>
+</script>
+
+<body>
+	<ion-pane ng-controller="calcController as vm">
+    	<ion-header-bar class="bar-stable">
+        	<h1 class="title">inCal</h1>
+        	<button class="button button-icon icon ion-information-circled blu" ng-click="vm.modal.show()"></button>
+      	</ion-header-bar>
+      	<ion-content scroll="false">
+      		<section class="pad">
+				<div class="row row-center riga text-right">
+					<div class="col col-25 col-center text-center but" ng-click="vm.clear()">C</div>
+					<div data-remtext data-remtext-min='1' data-remtext-max='3' class="col col-center result">{{vm.display}}</div>
+				</div>
+				<div class="row row-center riga text-center">
+					<div class="col col-center but" ng-click="vm.num(7)">7</div>
+					<div class="col col-center but" ng-click="vm.num(8)">8</div>
+					<div class="col col-center but" ng-click="vm.num(9)">9</div>
+					<div class="col col-center but" ng-click="vm.calc('/')">/</div>
+				</div>
+				<div class="row row-center riga text-center">
+					<div class="col col-center but" ng-click="vm.num(4)">4</div>
+					<div class="col col-center but" ng-click="vm.num(5)">5</div>
+					<div class="col col-center but" ng-click="vm.num(6)">6</div>
+					<div class="col col-center but" ng-click="vm.calc('*')">*</div>
+				</div>
+				<div class="row row-center riga text-center">
+					<div class="col col-center but" ng-click="vm.num(1)">1</div>
+					<div class="col col-center but" ng-click="vm.num(2)">2</div>
+					<div class="col col-center but" ng-click="vm.num(3)">3</div>
+					<div class="col col-center but" ng-click="vm.calc('+')">+</div>
+				</div>
+				<div class="row row-center riga text-center">
+					<div class="col col-center but" ng-click="vm.num(0)">0</div>
+					<div class="col col-center but" ng-click="vm.comma()">.</div>
+					<div class="col col-center but" ng-click="vm.result()">=</div>
+					<div class="col col-center but" ng-click="vm.calc('-')">-</div>
+				</div>
+			</section>
+    	</ion-content>
+	</ion-pane>
+</body>
+</html>
