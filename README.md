@@ -4,6 +4,11 @@ Simple 4 operations calculator with nearly infinite precision ;)
 This simple app was written for devdactic challenge #1: Build a Calculator with Ionic
 for more info see https://devdactic.com/challenge-1
 
+To use the app:
+1. ionic start inCal blank
+2. copy the www directory into the ionic project
+3. run with ionic serve
+
 I choose to make as simple as possible calculator, with floating point and only plus, minus, multiply and divide
 operations. I've used a Decimal.js (arbitrary precision decimal type for javascript) to handle very big numbers,
 see https://github.com/MikeMcl/decimal.js
