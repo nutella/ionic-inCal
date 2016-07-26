@@ -1,6 +1,6 @@
 Decimal.config({ precision: 999 });
 
-angular.module('inCal', ['ionic','ngRemText'])
+angular.module('inCal', ['ionic','ngAria','ngRemText'])
 
 .run(function($ionicPlatform) {
 	$ionicPlatform.ready(function() {
@@ -13,3 +13,14 @@ angular.module('inCal', ['ionic','ngRemText'])
 		}
 	});
 });
+
+angular.module('inCal').config(configure);
+configure.$inject= ['$ariaProvider'];
+
+function configure($ariaProvider) {
+  $ariaProvider.config({
+    bindKeydown: true,
+    bindRoleForClick: true
+  });
+}
+

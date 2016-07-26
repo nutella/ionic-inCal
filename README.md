@@ -17,4 +17,6 @@ see https://github.com/MikeMcl/decimal.js
 I've also added a modified version of ng-FitText.js adapted to continuosly check the element and change
 the font size to better display the result of calculations using rem instead of pixel, see https://github.com/patrickmarabeas/ng-FitText.js
 
+On 2016-07-26 I've added ngAria to demonstrate App accessibility with TalkBack and VoiceOver.
+
 In the www directory you can find the sources of the app, in the resources directory there are the icon and the splash screen.

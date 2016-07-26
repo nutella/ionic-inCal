@@ -29,6 +29,7 @@ function calcController($scope,$ionicModal) {
   	});
 
 	function num(digit) {
+		console.log('dd '+digit);
 		if ( vm.reset ) {
 			vm.display = 0;
 			vm.reset = false;

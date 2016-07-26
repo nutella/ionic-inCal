@@ -10,6 +10,7 @@
 <script src="cordova.js"></script>
 <script src="js/decimal.min.js"></script>
 <script src="js/ng-remtext.js"></script>
+<script src="js/ng-aria.js"></script>
 <script src="js/app.js"></script>
 <script src="js/calc-controllers.js"></script>
 </head>
@@ -30,7 +31,7 @@
     </ion-modal-view>
 </script>
 
-<body>
+<body role="application" data-tap-disabled="true">
 	<ion-pane ng-controller="calcController as vm">
     	<ion-header-bar class="bar-stable">
         	<h1 class="title">inCal</h1>
@@ -39,32 +40,32 @@
       	<ion-content scroll="false">
       		<section class="pad">
 				<div class="row row-center riga text-right">
-					<div class="col col-25 col-center text-center but" ng-click="vm.clear()">C</div>
-					<div data-remtext data-remtext-min='1' data-remtext-max='3' class="col col-center result">{{vm.display}}</div>
+					<div class="col col-25 col-center text-center but" ng-click="vm.clear()" aria-label="cancel">C</div>
+					<div data-remtext data-remtext-min='1' data-remtext-max='3' class="col col-center result" aria-label="result {{vm.display}}" aria-live="polite">{{vm.display}}</div>
 				</div>
 				<div class="row row-center riga text-center">
-					<div class="col col-center but" ng-click="vm.num(7)">7</div>
-					<div class="col col-center but" ng-click="vm.num(8)">8</div>
-					<div class="col col-center but" ng-click="vm.num(9)">9</div>
-					<div class="col col-center but" ng-click="vm.calc('/')">/</div>
+					<div class="col col-center but" ng-click="vm.num(7)" aria-label="7">7</div>
+					<div class="col col-center but" ng-click="vm.num(8)" aria-label="8">8</div>
+					<div class="col col-center but" ng-click="vm.num(9)" aria-label="9">9</div>
+					<div class="col col-center but" ng-click="vm.calc('/')" aria-label="divide">/</div>
 				</div>
 				<div class="row row-center riga text-center">
-					<div class="col col-center but" ng-click="vm.num(4)">4</div>
-					<div class="col col-center but" ng-click="vm.num(5)">5</div>
-					<div class="col col-center but" ng-click="vm.num(6)">6</div>
-					<div class="col col-center but" ng-click="vm.calc('*')">*</div>
+					<div class="col col-center but" ng-click="vm.num(4)" aria-label="4">4</div>
+					<div class="col col-center but" ng-click="vm.num(5)" aria-label="5">5</div>
+					<div class="col col-center but" ng-click="vm.num(6)" aria-label="6">6</div>
+					<div class="col col-center but" ng-click="vm.calc('*')" aria-label="multiply">*</div>
 				</div>
 				<div class="row row-center riga text-center">
-					<div class="col col-center but" ng-click="vm.num(1)">1</div>
-					<div class="col col-center but" ng-click="vm.num(2)">2</div>
-					<div class="col col-center but" ng-click="vm.num(3)">3</div>
-					<div class="col col-center but" ng-click="vm.calc('+')">+</div>
+					<div class="col col-center but" ng-click="vm.num(1)" aria-label="1">1</div>
+					<div class="col col-center but" ng-click="vm.num(2)" aria-label="2">2</div>
+					<div class="col col-center but" ng-click="vm.num(3)" aria-label="3">3</div>
+					<div class="col col-center but" ng-click="vm.calc('+')" aria-label="add">+</div>
 				</div>
 				<div class="row row-center riga text-center">
-					<div class="col col-center but" ng-click="vm.num(0)">0</div>
-					<div class="col col-center but" ng-click="vm.comma()">.</div>
-					<div class="col col-center but" ng-click="vm.result()">=</div>
-					<div class="col col-center but" ng-click="vm.calc('-')">-</div>
+					<div class="col col-center but" ng-click="vm.num(0)" aria-label="0">0</div>
+					<div class="col col-center but" ng-click="vm.comma()" aria-label="comma">.</div>
+					<div class="col col-center but" ng-click="vm.result()" aria-label="equal">=</div>
+					<div class="col col-center but" ng-click="vm.calc('-')" aria-label="subtract">-</div>
 				</div>
 			</section>
     	</ion-content>
